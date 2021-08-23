@@ -1,0 +1,44 @@
+
+	// Window
+
+	public removeWindowByName(name) {
+		this.children.splice(this.getWindowIndexByName(name), 1);
+	}
+
+	public getWindowByName(name) {
+		for (let x = 0; x < this.children.length; x++) {
+			if (this.children[x].getName() === name) {
+				return this.children[x];
+			}
+		}
+	}
+
+	public bringWindowToFront(name) {
+		this.children.unshift(this.children.splice(this.getWindowIndexByName(name), 1)[0]);
+	}
+
+	public sendWindowToBack(name) {
+		this.children.push(this.children.splice(this.getWindowIndexByName(name), 1)[0]);
+	}
+
+	public bringWindowForward(name) {
+		let index = this.getWindowIndexByName(name);
+
+		this.children.splice(index - 1, 0, this.children.splice(index, 1)[0]);
+	}
+
+	public sendWindowBackward(name) {
+		let index = this.getWindowIndexByName(name);
+
+		this.children.splice(index + 1, 0, this.children.splice(index, 1)[0]);
+	}
+
+	// Window Utilities
+
+	private getWindowIndexByName(name) {
+		for (let x = 0; x < this.children.length; x++) {
+			if (this.children[x].getName() === name) {
+				return x;
+			}
+		}
+	}
