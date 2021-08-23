@@ -6,6 +6,6 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: install
-                run: npm install eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
+            run: npm install eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
             - name: lint
-                run: npx eslint --ignore-pattern "public/**/*" --quiet "**/*.ts"
+            run: npx eslint --ignore-pattern "public/**/*" --quiet "**/*.ts"
