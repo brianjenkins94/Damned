@@ -4,8 +4,12 @@
 		"allowSyntheticDefaultImports": true,
 		"alwaysStrict": true,
 		"esModuleInterop": true,
+		//"exactOptionalPropertyTypes": true,
 		"experimentalDecorators": true,
 		"moduleResolution": "Node",
-		"target": "ES2015"
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"target": "ES2020"
 	}
 }
